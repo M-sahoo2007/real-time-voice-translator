@@ -1,0 +1,7 @@
+﻿gTTS
+PyAudio
+playsound==1.2.2
+SpeechRecognition
+requests
+cx-Freeze
+libretranslate==1.9.6

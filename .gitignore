@@ -1,0 +1,14 @@
+env/
+.venv/
+__pycache__/
+*.py[cod]
+*.log
+*.tmp
+.vscode/
+.idea/
+.pytest_cache/
+
+build/
+dist/
+main1.py
+main_backup.py
