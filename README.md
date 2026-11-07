@@ -1,630 +1,77 @@
 # LinguaSync: Real-Time Voice Translator
 
-<div align="center">
-
-<!-- Project Banner -->
-<img src="docs/images/linguasync-banner.png" alt="LinguaSync Project Banner" width="100%">
-
-# LinguaSync
-
-### Real-Time Voice Translator
-
-**Breaking Language Barriers Through Technology**
-
-Translate spoken conversations between languages using speech recognition, machine translation, and text-to-speech technology.
-
-<br>
-
-[![Python](https://img.shields.io/badge/Python-3.11-blue?logo=python&logoColor=white)](https://www.python.org/)
-[![Platform](https://img.shields.io/badge/Platform-Windows-0078D6?logo=windows&logoColor=white)](https://www.microsoft.com/windows)
-[![GUI](https://img.shields.io/badge/GUI-Tkinter-orange)](https://docs.python.org/3/library/tkinter.html)
-[![Translation](https://img.shields.io/badge/Translation-Argos%20Translate-green)](https://www.argosopentech.com/)
-[![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
-
-[GitHub Repository](https://github.com/M-sahoo2007/real-time-voice-translator) · [Report a Bug](https://github.com/M-sahoo2007/real-time-voice-translator/issues) · [Request a Feature](https://github.com/M-sahoo2007/real-time-voice-translator/issues)
-
-</div>
-
----
-
-## Table of Contents
-
-1. [Introduction](#1-introduction)
-2. [Project Objectives](#2-project-objectives)
-3. [Key Features](#3-key-features)
-4. [Application Preview](#4-application-preview)
-5. [Technologies Used](#5-technologies-used)
-6. [System Architecture](#6-system-architecture)
-7. [Program Workflow](#7-program-workflow)
-8. [Supported Languages](#8-supported-languages)
-9. [System Requirements](#9-system-requirements)
-10. [Project Installation](#10-project-installation)
-11. [Running the Application](#11-running-the-application)
-12. [Building the Executable](#12-building-the-executable)
-13. [Project Structure](#13-project-structure)
-14. [Working Principles](#14-working-principles)
-15. [Current Limitations](#15-current-limitations)
-16. [Future Enhancements](#16-future-enhancements)
-17. [Troubleshooting](#17-troubleshooting)
-18. [Contributing](#18-contributing)
-19. [License](#19-license)
-20. [Author and Contact](#20-author-and-contact)
-
----
-
-## 1. Introduction
-
-**LinguaSync: Real-Time Voice Translator** is a Python-based desktop application developed to simplify communication between people who speak different languages.
-
-Language differences can create communication barriers in education, business, travel, and everyday conversations. LinguaSync aims to reduce these barriers by converting spoken language into text, translating the recognized text, and producing spoken output in the target language.
-
-The application provides a graphical user interface through which users can select their source and target languages and start the voice translation process.
-
-The current implementation supports English and Hindi translation.
-
-LinguaSync combines speech recognition, local machine translation, and text-to-speech technologies to create an integrated voice translation workflow.
-
-### How It Works
-
-1. The user selects the source and target languages.
-2. The application captures speech through a microphone.
-3. Speech recognition converts the captured voice into text.
-4. The recognized text is sent to the translation engine.
-5. The translated text is displayed in the application.
-6. Text-to-speech generates spoken translated output.
-7. The generated audio is played through the system's audio device.
-
-## 2. Project Objectives
-
-The primary objectives of LinguaSync are:
-
-- To simplify communication between speakers of different languages.
-- To develop a desktop-based voice translation application.
-- To convert speech into readable text.
-- To translate recognized text into a selected target language.
-- To generate speech from translated text.
-- To provide a simple and user-friendly graphical interface.
-- To integrate speech recognition, machine translation, and audio playback.
-- To explore practical applications of Python and artificial intelligence technologies.
-
-## 3. Key Features
-
-| Feature | Description |
-|---|---|
-| Speech Recognition | Captures spoken language and converts it into text. |
-| Voice Translation | Translates recognized text into the selected language. |
-| Text-to-Speech | Converts translated text into audio. |
-| Language Selection | Allows selection of source and target languages. |
-| Graphical Interface | Provides a simple desktop application interface. |
-| Live Processing | Performs speech recognition and translation in a continuous workflow. |
-| Background Processing | Uses threading to keep the GUI responsive. |
-| Stop Execution | Provides an option to stop the translation process. |
-| Local Translation | Uses LibreTranslate and Argos Translate locally. |
-
-## 4. Application Preview
-
-### Main Application Interface
-
-<!-- Replace this image with an actual screenshot of your running application. -->
-
-<div align="center">
-<img src="docs/images/linguasync-main-interface.png" alt="LinguaSync Main Application Interface" width="90%">
-<br>
-<em>LinguaSync desktop application interface</em>
-</div>
-
-### Translation Example
-
-<div align="center">
-
-| Recognized English Text | Translated Hindi Text |
-|---|---|
-| Hello, how are you? | नमस्ते, आप कैसे हैं? |
-
-</div>
-
-### Application Screenshots
-
-Add additional screenshots here as the application develops.
-
-<div align="center">
-<img src="docs/images/linguasync-english-to-hindi.png" alt="English to Hindi Translation Screenshot" width="80%">
-
-<em>English to Hindi translation</em>
-
-<br><br>
-
-<img src="docs/images/linguasync-hindi-to-english.png" alt="Hindi to English Translation Screenshot" width="80%">
-
-<em>Hindi to English translation</em>
-</div>
-
-## 5. Technologies Used
-
-LinguaSync is developed using Python and several supporting libraries and services.
-
-| Technology | Purpose |
-|---|---|
-| Python 3.11 | Main programming language |
-| Tkinter | Desktop graphical user interface |
-| SpeechRecognition | Speech-to-text processing |
-| Google Speech Recognition | Online speech recognition |
-| LibreTranslate | Translation API server |
-| Argos Translate | Local machine translation engine |
-| gTTS | Text-to-speech generation |
-| PyAudio | Microphone audio input |
-| playsound | Generated audio playback |
-| Requests | HTTP communication |
-| Threading | Background task execution |
-| cx_Freeze | Application packaging |
-
-### Technology Overview
-
-**Python:** Handles application logic, integration, and processing.
-
-**Tkinter:** Creates the graphical desktop interface.
-
-**SpeechRecognition:** Captures and processes microphone input.
-
-**Google Speech Recognition:** Converts speech into text through an online recognition service.
-
-**LibreTranslate:** Provides a local translation API.
-
-**Argos Translate:** Performs machine translation using installed language models.
-
-**gTTS:** Generates speech audio from translated text.
-
-**PyAudio:** Provides access to microphone input.
-
-**playsound:** Plays the generated audio.
-
-**cx_Freeze:** Packages the application into a Windows executable.
-
-## 6. System Architecture
-
-LinguaSync uses a modular processing pipeline that connects the user interface, microphone input, speech recognition, translation engine, and speech output.
-
-### Architecture Diagram
-
-```mermaid
-flowchart TD
-    A([User]) --> B[Select Source and Target Languages]
-    B --> C[Tkinter Desktop Interface]
-    C --> D[Microphone Input]
-    D --> E[PyAudio]
-    E --> F[Speech Recognition]
-    F --> G[Google Speech Recognition API]
-    G --> H[Recognized Text]
-    H --> I[LibreTranslate Local API]
-    I --> J[Argos Translate Engine]
-    J --> K[Translated Text]
-    K --> L[Display Translation]
-    K --> M[gTTS]
-    M --> N[Audio File]
-    N --> O[playsound]
-    O --> P([Translated Voice Output])
-```
-
-### Architecture Components
-
-1. **User Interface Layer:** Accepts language selections and displays translation results.
-2. **Audio Input Layer:** Captures voice using the microphone.
-3. **Speech Recognition Layer:** Converts speech into text.
-4. **Translation Layer:** Processes text using LibreTranslate and Argos Translate.
-5. **Text-to-Speech Layer:** Generates spoken output using gTTS.
-6. **Audio Output Layer:** Plays the generated audio.
-
-## 7. Program Workflow
-
-The application follows these steps during a translation session:
-
-```mermaid
-flowchart TD
-    A([Start Application]) --> B[Load Application Interface]
-    B --> C[Load Available Languages]
-    C --> D{Translation Server Available?}
-    D -- No --> E[Display Connection Error]
-    E --> C
-    D -- Yes --> F[Select Languages]
-    F --> G[Start Translation]
-    G --> H[Capture Voice]
-    H --> I[Recognize Speech]
-    I --> J{Speech Recognized?}
-    J -- No --> K[Display Recognition Error]
-    K --> H
-    J -- Yes --> L[Translate Text]
-    L --> M[Display Translated Text]
-    M --> N[Generate Speech]
-    N --> O[Play Translated Audio]
-    O --> P{Continue?}
-    P -- Yes --> H
-    P -- No --> Q([Stop Translation])
-```
-
-## 8. Supported Languages
-
-The current version is configured for two languages.
-
-| Language | Language Code |
-|---|---|
-| English | `en` |
-| Hindi | `hi` |
-
-### Supported Translation Directions
-
-- English → Hindi
-- Hindi → English
-
-Additional languages may be added by installing compatible Argos Translate models and configuring the translation server.
-
-## 9. System Requirements
-
-### Hardware Requirements
-
-- Desktop computer or laptop.
-- Working microphone.
-- Speakers or headphones.
-- Sufficient storage for Python dependencies and translation models.
-
-### Software Requirements
-
-- Windows 10 or Windows 11.
-- Python 3.11.
-- 64-bit Python recommended.
-- Internet connection for speech recognition and gTTS.
-- LibreTranslate with the required language models installed.
-
-## 10. Project Installation
-
-Follow these instructions to install and configure LinguaSync on a new Windows computer.
-
-### Step 1: Install Python
-
-Download Python from:
-
-https://www.python.org/downloads/
-
-Install Python 3.11 and ensure that Python is available in the system PATH.
-
-Verify the installation:
-
+LinguaSync is a Python desktop application that captures spoken input, recognizes speech, translates the recognized text, and plays the translated speech.
+
+## Features
+- Tkinter desktop interface.
+- Microphone input using PyAudio and SpeechRecognition.
+- Speech recognition through Google's recognition service.
+- Text translation through a local LibreTranslate API.
+- Translated speech generated by gTTS and played using playsound.
+- Start Translation and Kill Execution controls.
+- Recognized-text and translated-text display areas.
+
+## Screenshots
+
+### Main interface
+![Main interface](docs/images/01-main-interface.png)
+
+### English to Hindi
+![English to Hindi](docs/images/02-english-to-hindi.png)
+
+### Hindi to English
+![Hindi to English](docs/images/03-hindi-to-english.png)
+
+## Technology
+Python 3.11, Tkinter, SpeechRecognition, PyAudio, LibreTranslate, Argos Translate, gTTS, playsound, Requests, cx_Freeze, and Inno Setup.
+
+## Requirements and limitations
+- Windows 10/11 64-bit is the target for the supplied Windows build.
+- A working microphone and audio output device are required.
+- LibreTranslate must be installed and running at `http://127.0.0.1:5000`.
+- English (`en`) and Hindi (`hi`) models were confirmed in the tested setup. Other languages require their corresponding models and supported language pairs.
+- Google speech recognition and gTTS require internet access. LinguaSync is therefore not fully offline.
+- The desktop installer does not bundle LibreTranslate or Argos language models.
+
+## Development setup
+1. Install Python 3.11 (64-bit).
+2. Create and activate a virtual environment:
+   ```powershell
+   python -m venv env
+   .\env\Scripts\Activate.ps1
+   ```
+3. Install dependencies:
+   ```powershell
+   python -m pip install -r requirements.txt
+   ```
+4. Install LibreTranslate and the required Argos models separately.
+5. Start the local server:
+   ```powershell
+   libretranslate --host 127.0.0.1 --port 5000 --load-only en,hi
+   ```
+6. In another terminal, run:
+   ```powershell
+   python main.py
+   ```
+
+## Build
 ```powershell
-python --version
+python setup.py build_exe --build-exe build\LinguaSync_Release
 ```
-
-### Step 2: Clone the Repository
-
-```powershell
-git clone https://github.com/M-sahoo2007/real-time-voice-translator.git
-```
-
-Navigate into the project directory:
-
-```powershell
-cd real-time-voice-translator
-```
-
-### Step 3: Create a Virtual Environment
-
-```powershell
-python -m venv env
-```
-
-Activate the environment:
-
-```powershell
-env\Scripts\activate
-```
-
-### Step 4: Upgrade pip
-
-```powershell
-python -m pip install --upgrade pip
-```
-
-### Step 5: Install Project Dependencies
-
-```powershell
-python -m pip install -r requirements.txt
-```
-
-Check the installed dependencies:
-
-```powershell
-python -m pip check
-```
-
-### Step 6: Configure LibreTranslate
-
-LibreTranslate provides the local translation API used by the application.
-
-Install the required language models for English and Hindi.
-
-Start the translation server:
-
-```powershell
-libretranslate --host 127.0.0.1 --port 5000 --load-only en,hi
-```
-
-Keep the server terminal open while using the application.
-
-The local API address is:
-
-```text
-http://127.0.0.1:5000
-```
-
-### Step 7: Verify the Translation Server
-
-Open another PowerShell terminal and run:
-
-```powershell
-Invoke-RestMethod http://127.0.0.1:5000/languages
-```
-
-The response should list the available languages, including English and Hindi.
-
-## 11. Running the Application
-
-After completing the installation and starting LibreTranslate, open another terminal.
-
-Navigate to the project folder:
-
-```powershell
-cd real-time-voice-translator
-```
-
-Activate the virtual environment:
-
-```powershell
-env\Scripts\activate
-```
-
-Start the application:
-
-```powershell
-python main.py
-```
-
-### Using LinguaSync
-
-1. Launch the application.
-2. Wait for the language list to load.
-3. Select the source language.
-4. Select the target language.
-5. Connect your microphone.
-6. Click **Start Translation**.
-7. Speak clearly into the microphone.
-8. View the recognized text.
-9. View the translated text.
-10. Listen to the translated audio.
-11. Use **Kill Execution** to stop the translation process.
-
-## 12. Building the Windows Executable
-
-LinguaSync uses cx_Freeze to package the Python application into a Windows executable.
-
-### Step 1: Install cx_Freeze
-
-```powershell
-python -m pip install cx-Freeze
-```
-
-### Step 2: Build the Application
-
-Make sure the virtual environment is activated.
-
-Run:
-
-```powershell
-python setup.py build_exe
-```
-
-### Step 3: Locate the Executable
-
-The generated application files will be available inside the `build` directory.
-
-The executable target name is:
-
-```text
-voice-translator.exe
-```
-
-### Important Deployment Information
-
-The executable packages the desktop application and its Python dependencies. It does not automatically include the LibreTranslate server or downloaded Argos language models.
-
-The target computer must have access to the local translation server and required models. Google Speech Recognition and gTTS also require internet access.
-
-A self-contained installer that includes the translation server and language models can be developed as a future deployment improvement.
-
-## 13. Project Structure
-
-```text
-real-time-voice-translator/
-│
-├── env/                       # Local Python virtual environment
-│
-├── build/                     # Generated executable build
-│
-├── dist/                      # Installer output
-│
-├── docs/
-│   └── images/
-│       ├── linguasync-banner.png
-│       ├── linguasync-main-interface.png
-│       ├── linguasync-english-to-hindi.png
-│       └── linguasync-hindi-to-english.png
-│
-├── main.py                    # Main application source code
-├── setup.py                   # cx_Freeze build configuration
-├── setup_backup.py            # Local backup of original build config
-├── requirements.txt           # Python dependencies
-│
-├── icon.ico                   # Windows application icon
-├── icon.png                   # GUI application icon
-│
-├── README.md                  # Project documentation
-├── LICENSE                    # Project license
-└── .gitignore                 # Git ignored files
-```
-
-*Note: The `docs/images/` folder is a recommended documentation folder. Add your actual image files there. The virtual environment, build output, and distribution output are local generated folders and are excluded from Git.*
-
-## 14. Working Principles
-
-### Speech Recognition
-
-The microphone captures the user's voice. PyAudio provides audio input, while SpeechRecognition processes the audio and uses Google Speech Recognition to identify the spoken words.
-
-### Machine Translation
-
-The recognized text is sent to the local LibreTranslate server. LibreTranslate uses the installed Argos Translate language models to translate the text into the selected target language.
-
-### Text-to-Speech
-
-The translated text is passed to gTTS, which generates audio. The generated audio is then played through the system using playsound.
-
-### Background Processing
-
-The application uses threading and a message queue to perform background operations while keeping the Tkinter interface responsive.
-
-## 15. Current Limitations
-
-The current version has the following limitations:
-
-- English and Hindi are the currently configured languages.
-- Speech recognition depends on an internet connection.
-- Text-to-speech generation depends on an internet connection.
-- LibreTranslate must be running locally.
-- Required translation models must be installed.
-- Microphone and audio output devices are required.
-- Stopping the application may wait for an ongoing blocking network or audio operation to finish.
-
-## 16. Future Enhancements
-
-The following features may be considered for future versions:
-
-- Support for more Indian languages.
-- Support for additional international languages.
-- Offline speech recognition.
-- Offline text-to-speech.
-- Improved speech recognition accuracy.
-- Improved translation quality.
-- Automatic language detection.
-- Conversation history.
-- Translation history export.
-- Better application settings.
-- Improved user interface design.
-- Easier installation and deployment.
-- Fully self-contained Windows installer.
-
-## 17. Troubleshooting
-
-### Problem 1: LibreTranslate Connection Error
-
-**Possible cause:** The local translation server is not running.
-
-**Solution:**
-
-```powershell
-libretranslate --host 127.0.0.1 --port 5000 --load-only en,hi
-```
-
-Keep the server running and restart the application if necessary.
-
-### Problem 2: Microphone Not Working
-
-**Possible causes:**
-
-- Microphone not connected.
-- Microphone permissions disabled.
-- Incorrect audio device selected.
-- PyAudio installation issue.
-
-**Solution:**
-
-- Check Windows microphone permissions.
-- Verify microphone functionality in Windows settings.
-- Confirm PyAudio is installed.
-
-### Problem 3: Speech Recognition Error
-
-**Possible cause:** Internet connection or Google Speech Recognition service issue.
-
-**Solution:**
-
-- Check your internet connection.
-- Speak clearly.
-- Reduce background noise.
-- Try again.
-
-### Problem 4: Translation Model Not Available
-
-**Possible cause:** Required language models are not installed.
-
-**Solution:**
-
-- Verify LibreTranslate installation.
-- Check that English and Hindi models are available.
-- Check the `/languages` endpoint.
-
-### Problem 5: No Audio Output
-
-**Possible cause:** gTTS generation or audio playback issue.
-
-**Solution:**
-
-- Check your internet connection.
-- Verify the system audio device.
-- Ensure playsound is installed.
-- Check that audio output is not muted.
-
-## 18. Contributing
-
-Contributions, suggestions, and improvements are welcome.
-
-To contribute:
-
-1. Fork the repository.
-2. Create a new feature branch.
-3. Make your changes.
-4. Test your changes.
-5. Submit a pull request.
-
-For bugs and feature requests, use the GitHub Issues section.
-
-[Open GitHub Issues](https://github.com/M-sahoo2007/real-time-voice-translator/issues)
-
-## 19. License
-
-This project is distributed under the license provided in the repository.
-
-See the [LICENSE](LICENSE) file for details.
-
-## 20. Author and Contact
-
-<div align="center">
-
-### LinguaSync: Real-Time Voice Translator
-
-**Developed by Maheswar Sahoo**
-
-[![GitHub](https://img.shields.io/badge/GitHub-M--sahoo2007-181717?logo=github)](https://github.com/M-sahoo2007)
-
-**Repository:**  
+The executable is `build\LinguaSync_Release\voice-translator.exe`. Distribute the complete output directory, not only the EXE. The Inno Setup script `installer.iss` builds `dist\LinguaSync_Setup.exe`.
+
+## Usage
+1. Start LibreTranslate.
+2. Launch LinguaSync.
+3. Select input and output languages.
+4. Click **Start Translation** and speak clearly.
+5. Review the recognized and translated text and listen to the translated speech.
+6. Click **Kill Execution** to request stopping.
+
+## Repository
 https://github.com/M-sahoo2007/real-time-voice-translator
 
-**Clone URL:**
+## Author
+Maheswar Sahoo
 
-```bash
-git clone https://github.com/M-sahoo2007/real-time-voice-translator.git
-```
-
----
-
-### Breaking Language Barriers Through Technology.
-
-**Thank you for visiting LinguaSync!**
-
-</div>
+See `LICENSE` for license terms.
