@@ -1,19 +1,34 @@
-from __future__ import annotations
+﻿from cx_Freeze import Executable, setup
 
-import sys
-import os
-from cx_Freeze import Executable, setup
+build_exe_options = {
+    "include_files": [
+        ("icon.png", "icon.png"),
+    ],
+    "packages": [
+        "tkinter",
+        "speech_recognition",
+        "pyaudio",
+        "gtts",
+        "playsound",
+        "requests",
+    ],
+    "include_msvcr": True,
+}
 
 setup(
-    name="voice-translator",
-    version="v2.0.1",
-    description="Real-Time Voice Translator GUI",
-    executables=[Executable("main.py", icon="icon.ico", target_name="voice-translator.exe")],
+    name="LinguaSync",
+    version="2.0.1",
+    description="LinguaSync - Real-Time Voice Translator",
     options={
-        "build_exe": {
-            "include_files": [("icon.png")],
-            "zip_include_packages": ["env/"],
-            "zip_exclude_packages": []
-        }
+        "build_exe": build_exe_options,
     },
+    executables=[
+        Executable(
+            "main.py",
+            target_name="voice-translator.exe",
+            # base="gui",
+            base="console",
+            icon="icon.ico",
+        )
+    ],
 )

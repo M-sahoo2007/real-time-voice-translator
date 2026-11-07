@@ -605,7 +605,7 @@ def open_about_page():
         about,
         text="Project Repository",
         command=lambda: webbrowser.open(
-            "https://github.com/SamirPaulb/real-time-voice-translator"
+            "https://github.com/M-sahoo2007/real-time-voice-translator"
         ),
     ).pack(pady=4)
 
