@@ -26,8 +26,7 @@ setup(
         Executable(
             "main.py",
             target_name="voice-translator.exe",
-            # base="gui",
-            base="console",
+            base="gui",
             icon="icon.ico",
         )
     ],
